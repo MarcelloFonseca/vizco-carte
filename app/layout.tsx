@@ -1,6 +1,6 @@
-import React from "react"
-import type { Metadata, Viewport } from "next"
-import { Montserrat, Source_Sans_3 } from "next/font/google"
+import React from "react";
+import type { Metadata, Viewport } from "next";
+import { Montserrat, Source_Sans_3 } from "next/font/google";
 
 import "./globals.css"
 

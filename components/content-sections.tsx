@@ -1,15 +1,7 @@
-import React from "react"
-import {
-  Linkedin,
-  Globe,
-  CalendarDays,
-  Presentation,
-  FileText,
-  Package,
-  BarChart3,
-  Users,
-  ChevronRight,
-} from "lucide-react"
+import React from "react";
+import haorix from "@/public/Haorix.png";
+import Image, { ImageProps } from 'next/image';
+import { Linkedin, Globe, CalendarDays, Presentation, FileText } from "lucide-react";
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
   return (
@@ -26,7 +18,7 @@ function SectionItem({
   href,
   iconColor = "text-primary",
 }: {
-  icon: React.ElementType
+  icon: React.ElementType | React.FC<ImageProps>
   label: string
   description?: string
   href: string
@@ -50,7 +42,6 @@ function SectionItem({
           </span>
         )}
       </div>
-      <ChevronRight className="h-4 w-4 text-muted-foreground" />
     </a>
   )
 }
@@ -58,88 +49,68 @@ function SectionItem({
 export function ContentSections() {
   return (
     <div className="flex flex-col gap-6 px-6 pt-5">
-      {/* Reseaux sociaux */}
+
       <section aria-label="Reseaux sociaux">
-        <SectionTitle>Reseaux sociaux</SectionTitle>
+        <SectionTitle>Réseaux sociaux</SectionTitle>
         <div className="flex flex-col gap-2">
           <SectionItem
             icon={Linkedin}
             label="LinkedIn"
-            description="linkedin.com/company/vizco"
-            href="https://linkedin.com/company/vizco"
+            description="Page LinkedIn de VizCo"
+            href="https://www.linkedin.com/company/trikeb"
+            iconColor="text-secondary"
           />
           <SectionItem
             icon={Globe}
             label="Site web"
-            description="vizco.ca"
+            description="Site web VizCo"
             href="https://vizco.ca"
+            iconColor="text-secondary"
           />
         </div>
       </section>
 
-      {/* Evenements */}
       <section aria-label="Evenements">
-        <SectionTitle>Evenements</SectionTitle>
+        <SectionTitle>Événements à venir</SectionTitle>
         <div className="flex flex-col gap-2">
           <SectionItem
             icon={CalendarDays}
-            label="Nos evenements a venir"
-            description="Conferences, salons et ateliers"
+            label="AVFQ"
+            description="Exposant à l'AVFQ 2026"
             href="#evenements"
-            iconColor="text-accent"
-          />
-          <SectionItem
-            icon={CalendarDays}
-            label="Webinaires"
-            description="Sessions en ligne gratuites"
-            href="#webinaires"
-            iconColor="text-accent"
+            iconColor="text-secondary"
           />
         </div>
       </section>
 
-      {/* Materiel de presentation */}
       <section aria-label="Materiel de presentation">
         <SectionTitle>Materiel de presentation</SectionTitle>
         <div className="flex flex-col gap-2">
           <SectionItem
             icon={Presentation}
             label="Brochure corporative"
-            description="PDF - Presentation de Vizco"
+            description="Presentation de Vizco - PDF"
             href="#brochure"
+            iconColor="text-secondary"
           />
           <SectionItem
             icon={FileText}
-            label="Portfolio de services"
-            description="PDF - Nos solutions detaillees"
+            label="Présentation générale VizCo"
+            description="Présentation détaillée de nos produits et services"
             href="#portfolio"
+            iconColor="text-secondary"
           />
         </div>
       </section>
 
-      {/* Produits integres a Vizco */}
       <section aria-label="Produits integres a Vizco">
-        <SectionTitle>Produits integres</SectionTitle>
+        <SectionTitle>Produits intégrés</SectionTitle>
         <div className="flex flex-col gap-2">
           <SectionItem
-            icon={Package}
-            label="Vizco Connect"
-            description="Cartes de visite NFC & QR"
-            href="#vizco-connect"
-            iconColor="text-secondary"
-          />
-          <SectionItem
-            icon={BarChart3}
-            label="Vizco Analytics"
-            description="Tableau de bord et statistiques"
-            href="#vizco-analytics"
-            iconColor="text-secondary"
-          />
-          <SectionItem
-            icon={Users}
-            label="Vizco CRM"
-            description="Gestion de contacts intelligente"
-            href="#vizco-crm"
+            icon={() => <Image src={haorix} alt="Haorix" width={18} height={18} />}
+            label="HAORIX"
+            description="Console de production pour suivre vos opérations en temps réel"
+            href="https://haorix.ca"
             iconColor="text-secondary"
           />
         </div>

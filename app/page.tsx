@@ -1,7 +1,7 @@
-import { ProfileHeader } from "@/components/profile-header"
-import { ActionButtons } from "@/components/action-buttons"
-import { ContentSections } from "@/components/content-sections"
-import { VizcoFooter } from "@/components/vizco-footer"
+import { VizcoFooter } from "@/components/vizco-footer";
+import { ActionButtons } from "@/components/action-buttons";
+import { ProfileHeader } from "@/components/profile-header";
+import { ContentSections } from "@/components/content-sections";
 
 export default function Page() {
   return (
