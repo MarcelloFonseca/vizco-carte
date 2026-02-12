@@ -32,7 +32,7 @@ export function ActionButtons() {
     FN:Martin Paré (VizCo)
     ORG:VizCo
     TEL:+14503002524
-    EMAIL:mpare@trikeb.commm
+    EMAIL:mpare@trikeb.com
     URL:https://vizco.ca
     NOTE:Solution ERP pour le secteur manufacturier
     END:VCARD`
