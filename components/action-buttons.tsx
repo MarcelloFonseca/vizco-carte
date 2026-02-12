@@ -30,7 +30,9 @@ export function ActionButtons() {
     const vcard = `BEGIN:VCARD
 VERSION:3.0
 FN:Martin Paré (VizCo)
-ORG:VizCo
+ORG:Martin Paré (VizCo);
+TITLE:Vendeur
+ADR;TYPE=WORK:;;1370 Rue de Coulomb Bureau 100, Boucherville, QC J4B 7J4;Canada
 TEL:+14503002524
 EMAIL:mpare@trikeb.com
 URL:https://vizco.ca
