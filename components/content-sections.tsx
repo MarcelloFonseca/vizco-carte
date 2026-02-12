@@ -84,12 +84,12 @@ export function ContentSections() {
       </section>
 
       <section aria-label="Materiel de presentation">
-        <SectionTitle>Materiel de presentation</SectionTitle>
+        <SectionTitle>Matériel de présentation</SectionTitle>
         <div className="flex flex-col gap-2">
           <SectionItem
             icon={Presentation}
             label="Brochure corporative"
-            description="Presentation de Vizco - PDF"
+            description="Présentation de Vizco - PDF"
             href="https://developmentlessard.com/VizcoRevamp/wp-content/uploads/2025/04/Solution-VizCo-Brochure-1.pdf"
             iconColor="text-secondary"
           />
