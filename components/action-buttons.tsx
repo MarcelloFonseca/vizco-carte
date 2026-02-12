@@ -29,8 +29,8 @@ export function ActionButtons() {
   const handleSaveContact = () => {
     const vcard = `BEGIN:VCARD
     VERSION:3.0
-    FN:Vizco
-    ORG:Vizco
+    FN:Martin Paré (VizCo)
+    ORG:VizCo
     TEL:+14503002524
     EMAIL:mpare@trikeb.com
     URL:https://vizco.ca
@@ -53,11 +53,11 @@ export function ActionButtons() {
           <a
             key={action.label}
             href={action.href}
-            className="flex flex-col items-center gap-2 rounded-lg border border-border bg-popover p-3.5 transition-colors hover:bg-muted active:scale-95"
+            className="flex flex-col justify-center items-center gap-2 rounded-lg border border-border bg-popover p-3.5 transition-colors hover:bg-muted active:scale-95"
             aria-label={action.label}
           >
             <action.icon className="h-5 w-5 text-primary" />
-            <span className="text-[10px] font-medium text-foreground">
+            <span className="text-[10px] font-medium text-foreground text-center break-words">
               {action.label}
             </span>
           </a>

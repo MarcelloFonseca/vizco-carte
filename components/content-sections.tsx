@@ -54,17 +54,17 @@ export function ContentSections() {
         <SectionTitle>Réseaux sociaux</SectionTitle>
         <div className="flex flex-col gap-2">
           <SectionItem
-            icon={Linkedin}
-            label="LinkedIn"
-            description="Page LinkedIn de VizCo"
-            href="https://www.linkedin.com/company/trikeb"
-            iconColor="text-secondary"
-          />
-          <SectionItem
             icon={Globe}
             label="Site web"
             description="Site web VizCo"
             href="https://vizco.ca"
+            iconColor="text-secondary"
+          />
+          <SectionItem
+            icon={Linkedin}
+            label="LinkedIn"
+            description="Page LinkedIn de VizCo"
+            href="https://www.linkedin.com/company/trikeb"
             iconColor="text-secondary"
           />
         </div>
@@ -77,7 +77,7 @@ export function ContentSections() {
             icon={CalendarDays}
             label="AVFQ"
             description="Exposant à l'AVFQ 2026"
-            href="#evenements"
+            href="https://www.avfq.ca/evenements/Congres-2026"
             iconColor="text-secondary"
           />
         </div>
@@ -90,14 +90,14 @@ export function ContentSections() {
             icon={Presentation}
             label="Brochure corporative"
             description="Presentation de Vizco - PDF"
-            href="#brochure"
+            href="https://developmentlessard.com/VizcoRevamp/wp-content/uploads/2025/04/Solution-VizCo-Brochure-1.pdf"
             iconColor="text-secondary"
           />
           <SectionItem
             icon={FileText}
             label="Présentation générale VizCo"
             description="Présentation détaillée de nos produits et services"
-            href="#portfolio"
+            href="https://my.visme.co/view/vm1mk9m3-presentation-vizco-beta"
             iconColor="text-secondary"
           />
         </div>
