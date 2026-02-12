@@ -28,14 +28,14 @@ const actions = [
 export function ActionButtons() {
   const handleSaveContact = () => {
     const vcard = `BEGIN:VCARD
-    VERSION:3.0
-    FN:Martin Paré (VizCo)
-    ORG:VizCo
-    TEL:+14503002524
-    EMAIL:mpare@trikeb.com
-    URL:https://vizco.ca
-    NOTE:Solution ERP pour le secteur manufacturier
-    END:VCARD`
+VERSION:3.0
+FN:Martin Paré (VizCo)
+ORG:VizCo
+TEL:+14503002524
+EMAIL:mpare@trikeb.com
+URL:https://vizco.ca
+NOTE:Solution ERP pour le secteur manufacturier
+END:VCARD`
 
     const blob = new Blob([vcard], { type: "text/vcard" })
     const url = URL.createObjectURL(blob)
