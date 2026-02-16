@@ -13,7 +13,7 @@ export function ProfileHeader() {
         <p className="text-xs text-muted-foreground mt-2">
           <strong>Solution ERP pour le secteur manufacturier</strong>
         </p>
-        <div className='flex items-center justify-center border border-[#00348E] rounded-[3px] p-2 mt-2 shadow-md text-wrap'>
+        <div className='flex items-center justify-center border border-[#00348E] rounded-[3px] p-2 mt-2 shadow-md text-wrap w-[90%]'>
         <p className="text-sm text-muted-foreground">
           Si vous souhaitez en savoir plus, contactez <strong>Martin Paré</strong> notre <strong>directeur des ventes</strong>
         </p>
