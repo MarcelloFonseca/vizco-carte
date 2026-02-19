@@ -9,10 +9,10 @@ export default function PresentationModulePage() {
       <div className="flex items-center gap-3 px-5 pb-2 pt-6">
         <Link
           href="/"
-          className="flex h-8 w-8 items-center justify-center rounded-full bg-popover border border-border transition-colors hover:bg-muted"
+          className="flex h-8 w-8 items-center justify-center rounded-sm bg-popover border border-border transition-colors"
           aria-label="Retour"
         >
-          <ArrowLeft className="h-4 w-4 text-foreground" />
+          <ArrowLeft className="h-8 w-8 text-foreground" />
         </Link>
         <div>
           <h1 className="font-heading text-lg font-bold text-foreground">

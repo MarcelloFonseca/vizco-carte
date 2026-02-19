@@ -2,6 +2,7 @@ import GC from "@/public/GC.png";
 import SAV from "@/public/SAV.png";
 import PPA from "@/public/PPA.png";
 import VRC from "@/public/VRC.png";
+import GEP from "@/public/GEP.png";
 import Image, { type StaticImageData } from "next/image";
 
 const modules: { image: StaticImageData; title: string; description: string }[] = [
@@ -11,7 +12,7 @@ const modules: { image: StaticImageData; title: string; description: string }[] 
     description: "Configurez vos produits, creez un catalogue interactif et developpez vos ventes.",
   },
   {
-    image: GC,
+    image: GEP,
     title: "Gestion et execution de projets",
     description: "Optimisez la planification, la gestion des ressources et l'execution de vos projets.",
   },
@@ -59,7 +60,7 @@ export function ModulesPresentation() {
       {modules.map((mod) => (
         <div
           key={mod.title}
-          className="flex items-start gap-4 rounded-xl border border-border bg-popover p-4 transition-colors hover:bg-muted"
+          className="flex items-start gap-4 rounded-xl border border-border bg-popover p-4 transition-colors"
         >
           <HexagonIcon image={mod.image} alt={mod.title} />
           <div className="flex flex-1 flex-col gap-1 pt-1">
