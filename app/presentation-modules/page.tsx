@@ -16,10 +16,10 @@ export default function PresentationModulePage() {
         </Link>
         <div>
           <h1 className="font-heading text-lg font-bold text-foreground">
-            Nos modules ERP
+            Nos principaux modules VizCo
           </h1>
           <p className="text-xs text-muted-foreground">
-            Solutions integrées Vizco
+            Chaque module est conçu pour répondre à vos besoins spécifiques et vous aider à optimiser vos opérations.
           </p>
         </div>
       </div>
