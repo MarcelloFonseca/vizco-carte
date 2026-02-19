@@ -1,6 +1,7 @@
 import React from "react";
 import haorix from "@/public/Haorix.png";
 import Image, { ImageProps } from 'next/image';
+import VizNewsMark from "@/public/VizNewsMark.png";
 import { Linkedin, Globe, CalendarDays, Presentation, FileText } from "lucide-react";
 
 function SectionTitle({ children }: { children: React.ReactNode }) {
@@ -21,7 +22,7 @@ function SectionItem({
   icon: React.ElementType | React.FC<ImageProps>
   label: string
   description?: string
-  href: string
+  href?: string
   iconColor?: string
 }) {
   return (
@@ -98,6 +99,19 @@ export function ContentSections() {
             label="Présentation générale VizCo"
             description="Présentation détaillée de nos produits et services"
             href="https://my.visme.co/view/vm1mk9m3-presentation-vizco-beta"
+            iconColor="text-secondary"
+          />
+        </div>
+      </section>
+
+      <section aria-label="Bulletin d'information VizNews">
+        <SectionTitle>Bulletin d'information VizNews</SectionTitle>
+        <div className="flex flex-col gap-2">
+          <SectionItem
+            icon={() => <Image src={VizNewsMark} alt="VizNews" width={18} height={18} />}
+            label="VizNews"
+            description="Des réflexions concrètes de nos experts pour faire avancer votre usine, à chaque mois."
+            href="https://developmentlessard.com/VizcoRevamp/viznews-inscription/"
             iconColor="text-secondary"
           />
         </div>
