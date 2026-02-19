@@ -1,6 +1,6 @@
 "use client"
 
-import { Phone, Mail, Globe, Download, MapPin } from "lucide-react"
+import { Phone, Mail, Globe, Download, MapPin } from "lucide-react";
 
 const actions = [
   {

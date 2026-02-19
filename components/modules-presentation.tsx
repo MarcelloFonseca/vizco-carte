@@ -1,10 +1,8 @@
-import type React from "react";
-import Image, { type StaticImageData } from "next/image";
-
 import GC from "@/public/GC.png";
 import SAV from "@/public/SAV.png";
 import PPA from "@/public/PPA.png";
 import VRC from "@/public/VRC.png";
+import Image, { type StaticImageData } from "next/image";
 
 const modules: { image: StaticImageData; title: string; description: string }[] = [
   {
