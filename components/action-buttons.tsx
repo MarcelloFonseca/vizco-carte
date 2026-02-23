@@ -26,8 +26,9 @@ const actions = [
 ]
 
 export function ActionButtons() {
+
   const handleSaveContact = () => {
-  const vcard = `BEGIN:VCARD\r
+ const vcard = `BEGIN:VCARD\r
 VERSION:3.0\r
 FN:Martin Paré\r
 N:Paré;Martin;;;\r
@@ -44,7 +45,12 @@ END:VCARD\r
   const blob = new Blob([vcard], { type: "text/x-vcard;charset=utf-8" });
   const url = URL.createObjectURL(blob);
 
-  window.open(url, "_blank", "noopener,noreferrer");
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "martin-pare.vcf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 
   setTimeout(() => URL.revokeObjectURL(url), 10_000);
   }
