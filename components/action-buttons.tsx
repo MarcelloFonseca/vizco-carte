@@ -41,11 +41,13 @@ END:VCARD`
 
     const blob = new Blob([vcard], { type: "text/vcard" })
     const url = URL.createObjectURL(blob)
-    const a = document.createElement("a")
+    /*const a = document.createElement("a")
     a.href = url
     a.download = "vizco.vcf"
     a.click()
-    URL.revokeObjectURL(url)
+    URL.revokeObjectURL(url)*/
+    window.location.href = url;
+    setTimeout(() => URL.revokeObjectURL(url), 10_000);
   }
 
   return (
