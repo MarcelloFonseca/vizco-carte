@@ -27,27 +27,26 @@ const actions = [
 
 export function ActionButtons() {
   const handleSaveContact = () => {
-    const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:Martin Paré (VizCo)
-ORG:Martin Paré (VizCo);
-TITLE:Directeur des ventes
-ADR;TYPE=WORK:;;1370 Rue de Coulomb Bureau 100, Boucherville, QC J4B 7J4;Canada
-TEL:+14503002524
-EMAIL:mpare@trikeb.com
-URL:https://vizco.ca
-NOTE:Solution ERP pour le secteur manufacturier
-END:VCARD`
+  const vcard = `BEGIN:VCARD\r
+VERSION:3.0\r
+FN:Martin Paré\r
+N:Paré;Martin;;;\r
+ORG:Trikeb\r
+TITLE:Directeur des ventes\r
+TEL;TYPE=WORK,VOICE:+14503002524\r
+EMAIL;TYPE=WORK:mpare@trikeb.com\r
+URL:https://vizco.ca\r
+ADR;TYPE=WORK:;;1370 Rue de Coulomb Bureau 100;Boucherville;QC;J4B 7J4;Canada\r
+NOTE:Solution ERP pour le secteur manufacturier\r
+END:VCARD\r
+`;
 
-    const blob = new Blob([vcard], { type: "text/vcard" })
-    const url = URL.createObjectURL(blob)
-    /*const a = document.createElement("a")
-    a.href = url
-    a.download = "vizco.vcf"
-    a.click()
-    URL.revokeObjectURL(url)*/
-    window.location.href = url;
-    setTimeout(() => URL.revokeObjectURL(url), 10_000);
+  const blob = new Blob([vcard], { type: "text/x-vcard;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  window.open(url, "_blank", "noopener,noreferrer");
+
+  setTimeout(() => URL.revokeObjectURL(url), 10_000);
   }
 
   return (
