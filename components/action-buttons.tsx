@@ -46,7 +46,9 @@ END:VCARD\r
     type: "text/x-vcard",
   });
 
-  if (navigator.canShare?.({ files: [file] })) {
+  const isAndroid = /android/i.test(navigator.userAgent);
+
+  if (isAndroid && navigator.canShare?.({ files: [file] })) {
     try {
       await navigator.share({
         files: [file],
