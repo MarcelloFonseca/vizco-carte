@@ -27,8 +27,8 @@ const actions = [
 
 export function ActionButtons() {
 
-  const handleSaveContact = () => {
- const vcard = `BEGIN:VCARD\r
+const handleSaveContact = async () => {
+  const vcard = `BEGIN:VCARD\r
 VERSION:3.0\r
 FN:Martin Paré\r
 N:Paré;Martin;;;\r
@@ -42,18 +42,31 @@ NOTE:Solution ERP pour le secteur manufacturier\r
 END:VCARD\r
 `;
 
-  const blob = new Blob([vcard], { type: "text/x-vcard;charset=utf-8" });
-  const url = URL.createObjectURL(blob);
+  const file = new File([vcard], "martin-pare.vcf", {
+    type: "text/x-vcard",
+  });
 
+  if (navigator.canShare?.({ files: [file] })) {
+    try {
+      await navigator.share({
+        files: [file],
+        title: "Martin Paré",
+      });
+      return;
+    } catch (e) {
+      if (e instanceof Error && e.name === "AbortError") return;
+    }
+  }
+
+  const url = URL.createObjectURL(file);
   const a = document.createElement("a");
   a.href = url;
   a.download = "martin-pare.vcf";
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-
   setTimeout(() => URL.revokeObjectURL(url), 10_000);
-  }
+};
 
   return (
     <section className="flex flex-col gap-3 px-6" aria-label="Actions de contact">
