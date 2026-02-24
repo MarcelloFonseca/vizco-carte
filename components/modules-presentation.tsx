@@ -1,45 +1,8 @@
-import GC from "@/public/GC.png";
-import SAV from "@/public/SAV.png";
-import PPA from "@/public/PPA.png";
-import VRC from "@/public/VRC.png";
-import GEP from "@/public/GEP.png";
+import Link from "next/link";
+import { modulesData } from "@/lib/modules-data";
 import Image, { type StaticImageData } from "next/image";
 
-const modules: { image: StaticImageData; title: string; description: string }[] = [
-  {
-    image: VRC,
-    title: "Ventes et relations clients",
-    description: "Configurez vos produits, creez un catalogue interactif et developpez vos ventes.",
-  },
-  {
-    image: GEP,
-    title: "Gestion et execution de projets",
-    description: "Optimisez la planification, la gestion des ressources et l'execution de vos projets.",
-  },
-  {
-    image: PPA,
-    title: "Production, planification et approvisionnements",
-    description: "Renforcez l'automatisation de la production, ameliorez la gestion des approvisionnements, et accelerez la fabrication.",
-  },
-  {
-    image: SAV,
-    title: "Service technique et apres-vente",
-    description: "Assurez la gestion du SAV, la maintenance technique et l'intervention rapide.",
-  },
-  {
-    image: GC,
-    title: "Gestion comptable",
-    description: "Simplifiez votre comptabilite, renforcez votre gestion financiere et assurez un controle en temps reel.",
-  },
-];
-
-function HexagonIcon({
-  image,
-  alt,
-}: {
-  image: StaticImageData;
-  alt: string;
-}) {
+export function HexagonIcon({ image, alt }: { image: string | StaticImageData; alt: string; }) {
   return (
     <div className="relative flex h-16 w-16 shrink-0 items-center justify-center">
       <Image
@@ -57,21 +20,23 @@ function HexagonIcon({
 export function ModulesPresentation() {
   return (
     <div className="flex flex-col gap-3 px-5 py-4">
-      {modules.map((mod) => (
-        <div
-          key={mod.title}
-          className="flex items-start gap-4 rounded-xl border border-border bg-popover p-4 transition-colors"
-        >
-          <HexagonIcon image={mod.image} alt={mod.title} />
+      {modulesData.map((mod) => (
+        <Link key={mod.slug} href={`/presentation-modules/${mod.slug}`}>
+          <div
+            key={mod.title}
+            className="flex items-start gap-4 rounded-xl border border-border bg-popover p-4 transition-colors"
+          >
+        <HexagonIcon image={mod.image} alt={mod.title} />
           <div className="flex flex-1 flex-col gap-1 pt-1">
             <h3 className="font-heading text-sm font-bold leading-snug text-foreground">
               {mod.title}
             </h3>
             <p className="text-xs leading-relaxed text-muted-foreground">
-              {mod.description}
+              {mod.shortDescription}
             </p>
           </div>
         </div>
+        </Link>
       ))}
     </div>
   );
